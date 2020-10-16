@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	<member>
+		<list>
+			<name></name>
+			<sex></sex>
+			<tel></tel>
+			<address></address>
+		</list>
+		<list>
+			<name></name>
+			<sex></sex>
+			<handphone></handphone>
+			<address></address>
+		</list>
+	</member>
+-->
+<! ELEMENT member (list+)>
+<! ELEMENT list (name, sex, (tel|hp), address)>
+<! ELEMENT name (#PCDATA)> 
+<! ELEMENT sex (#PCDATA)>
+<! ELEMENT tel (#PCDATA)>
+<! ELEMENT hp (#PCDATA)>
+<! ELEMENT address (#PCDATA)>

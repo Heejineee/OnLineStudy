@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	HTML (고정된 태그) => XML 코드는 사용자 정의
+	
+	XML => 1) 태그
+				2) 속성
+				
+			=> HTML과 다른점
+				1) 문법이 어렵다
+				2) HTML은 화면 출력 목적 / XML은 문서 저장 목적(파일형 데이터베이스)
+				3) 태그나 속성에서 대소문자를 구분한다
+				4) 속성에 값을 대입할 때 반드시 "" 붙여야 함
+				5) 여는태그, 닫는태그 반드시 일치
+				6) Spring, Mybatis => XML 기반
+			=> 장점
+				1) 호환성이 좋다 (스마트폰, 리눅스, 윈도우) 
+					=> 운영체제에 상관없이 사용 가능
+			=> 단점
+				1) XML 코드가 길어지면 속도가 느려진다
+					=> 분산처리 해야함(여러개로 나눠서 처리)
+			=> Spring, Mybatis : 업체마다 XML코드가 다르기 때문에
+										 제공하는 XML만 사용해야 함(외워야 함)
+					=> DTD파일 제공(태그 정의된 문서)
+			=> XML 주로 사용하는 부분
+					- Ajax(Javascript and XML)
+					- javascript 6(XML기반)
+					- React / VueJS
+					- AI => 데이터 수집(XML)
+					- Kotlin => XML기반
+			=> XML 변환 (Annotation)
+			=> 문법
+				- 알파벳, 한글로 시작한다(알파벳 : 대소문자 구분)
+					=> <a>!=<A>
+				- 숫자를 사용할 수 있다(맨 앞엔 사용 금지)		
+				- 태그에 공백 X
+				- 특수문자 사용 가능 : _, -, .
+					=> <file_name> / <file-name> / <file.name>
+				- 키워드는 사용할 수 없다 => <xml>
+				- HTML태그는 사용 가능
+				- 여는태그와 닫는태그 반드시 일치
+				- XML태그는 반드시 최상위 태그가 존재
+					=> <a></a>
+						<b></b> (X)
+						
+						<a>
+							<b></b>
+						<a>		  (O)
+						
+ -->
+ <sawon>
+ 	<list>
+ 		<sabun>1</sabun>
+ 		<name>홍길동</name>
+ 		<job>사원</job>
+ 		<dept>개발부</dept>
+ 		<sal>3500</sal>
+ 	</list>
+ 	<list>
+ 		<sabun>2</sabun>
+ 		<name>심청이</name>
+ 		<job>대리</job>
+ 		<dept>개발부</dept>
+ 		<sal>3800</sal>
+ 	</list>
+ </sawon>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
