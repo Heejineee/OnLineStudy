@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	<sawon sabun="1" name="홍길동" dept="개발부" job="사원 sal="3000"/>
+	아래처럼 쓸 수도 이렇게 쓸 수도 있음!
+ -->
+<sawon>
+	<list>
+		<sabun>1</sabun>
+		<name>홍길동</name>
+		<dept>개발부</dept>
+		<job>사원</job>
+		<sal>3000</sal>
+	</list>
+	<list>
+		<sabun>2</sabun>
+		<name>김철수</name>
+		<dept>개발부</dept>
+		<job>대리</job>
+		<sal>3800</sal>
+	</list>
+	<list>
+		<sabun>3</sabun>
+		<name>흰둥이</name>
+		<dept>부</dept>
+		<job>사원</job>
+		<sal>8000</sal>
+	</list>
+</sawon>
