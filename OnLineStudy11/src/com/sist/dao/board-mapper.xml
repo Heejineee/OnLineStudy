@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+	main.jsp ==> case 등록 ==> 화면 변경(번호 설정)
+	DB 관련
+		=> Config.xml
+			<mappers>
+				<mapper resource="">
+			</mappers>
+		=> board-mappper.xml
+			<select></select>
+		=> BoardDAO
+			SQL 읽고 출력
+			
+		=> JSP에서 화면 출력
+ -->
+ <mapper namespace="com.sist.dao.board-mapper">
+ 	<select id="freeBoardListData" resultType="com.sist.dao.BoardVO" parameterType="hashmap">
+ 		SELECT no, subject, name, TO_CHAR(regdate, 'YYYY/MM/DD') as dbday, hit, num
+ 		FROM (select no, subject, name, regdate, hit, rownum as num 
+ 		FROM (select no, subject, name, regdate, hit 
+ 		FROM movie_board4 ORDER BY no DESC))
+ 		WHERE num BETWEEN #{start} AND #{end}
+ 	</select>
+ 	<insert id="freeBoardInsert" parameterType="com.sist.dao.BoardVO">
+ 		INSERT INTO movie_board4 VALUES(
+ 			mb4_no_seq.nextval,
+ 			#{name},
+ 			#{subject},
+ 			#{content},
+ 			#{pwd},
+ 			SYSDATE, 0
+ 		)
+ 	</insert>
+ 	<!-- 상세보기 -->
+ 	<!-- 조회수 증가 -->
+ 	<update id="freeBoardHitIncrement" parameterType="int">
+ 		<!--  parameterType="int" : 게시물의 번호를 대입 -->
+ 		UPDATE movie_board SET
+ 		hit=hit+1
+ 		where no=#{no}
+ 	</update>
+ 	<!-- 실제 데이터 읽기 (내용보기) -->
+ 	<select id="freeBoardDetailData" resultType="com.sist.dao.BoardVO" parameterType="int">
+ 		SELECT no, name, subject, content, TO_CHAR(regdate, 'YYYY-MM-DD') as dbday, hit
+ 		FROM movie_board4
+ 		WHERE no=#{no}
+ 	</select>
+ 	<!-- 수정 -->
+ 	<select id="freeBoardGetPassword" resultType="String" parameterType="int">
+ 		<!-- 
+ 			resultType="String"
+ 			parameterType="int" => 변수명(데이터형)
+ 		 -->
+ 		 <!-- 본인 여부 확인 -->
+ 		 SELECT pwd FROM movie_board4
+ 		 WHERE no=#{no}
+ 	</select>
+ 	<!-- 
+ 		<insert>, <update>, <delete> ==> resultType(결과값)은 없다
+ 		<select> ==> resultType 있음
+ 	 -->
+ 	<update id="freeBoardUpdate" parameterType="com.sist.dao.BoardVO">
+ 		UPDATE movie_board4 SET
+ 		name=#{name},
+ 		subject=#{subject},
+ 		content=#{content}
+ 		WHERE no=#{no}
+ 	</update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
