@@ -1,0 +1,14 @@
+*{font-family:"¸¼Àº °íµñ";}
+#sawon_list{
+	color:orange;
+	background-color:blue;
+}
+#table_header{
+	background-color:green;
+}
+#sawon_table{
+	width:600px;
+}
+.td1{
+	text-align:center;
+}

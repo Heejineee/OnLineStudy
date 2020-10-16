@@ -1,0 +1,38 @@
+
+*{font-family:"맑은 고딕";}
+#table_content{
+	/*border-collapse:collapse;  라인선을 한개로 통합 */
+	border-top-width: 2px;
+	border-top-color:#333;
+	border-top-style:solid;
+	
+	border-bottom-width: 2px;
+	border-bottom-color:#333;
+	border-bottom-style:solid;
+}
+#table_content th, td{
+	margin: 0px;
+	padding: 8px;
+	font-size:9pt;
+}
+#table_content th{
+	background-color:#999;
+	color:white;
+	border-bottom-width:1px;
+	border-bottom-color:#333;
+}
+#table_content td{
+	border-bottom-width:1px;
+	border-bottom-color:#333;
+	border-bottom-style:dotted;
+}
+#table_content tr:nth-child(2n+1){
+	background-color:RGB(255,255,200);
+}
+#table_content .dataTr:hover{
+	background-color: #FC6;
+	cursor: pointer;
+}
+img {
+	border-radius:12px;
+}
